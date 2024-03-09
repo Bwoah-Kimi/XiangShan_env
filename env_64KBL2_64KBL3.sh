@@ -5,7 +5,7 @@ export NEMU_HOME=$(pwd)/NEMU
 export AM_HOME=$(pwd)/nexus-am
 #export NOOP_HOME=$(pwd)/XiangShan-kunminghu
 #export NOOP_HOME=$(pwd)/XiangShan-southlake
-export NOOP_HOME=$(pwd)/XiangShan_Mar08
+export NOOP_HOME=$(pwd)/XiangShan_64KBL2_64KBL3
 export DRAMSIM3_HOME=$(pwd)/DRAMsim3
 
 echo SET XS_PROJECT_ROOT: ${XS_PROJECT_ROOT}
