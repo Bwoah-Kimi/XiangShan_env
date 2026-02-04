@@ -1,8 +1,7 @@
 # xs-env (legacy Nanhu 2024)
 
-This superproject tracks a legacy Nanhu-era XiangShan setup with local 2024
-config presets consolidated into the XiangShan submodule. The original
-superproject README is preserved as `ORIGINAL_README.md`.
+This superproject tracks a legacy Nanhu-era XiangShan setup with local 2024 config presets consolidated into the XiangShan submodule.
+The original superproject README is preserved as `ORIGINAL_README.md`.
 
 ## Submodules and branches
 
@@ -30,9 +29,8 @@ If RTL generation OOMs, raise `-Xmx` before running `make verilog`.
 
 ## What was added in XiangShan-southlake
 
-The southlake legacy branch contains a `MyMinimalConfig` preset and related
-build/scalafmt tweaks (commit `e67ddf3f` in that submodule). It is kept
-separately because southlake tracks a different upstream branch.
+The southlake legacy branch contains a `MyMinimalConfig` preset and related build/scalafmt tweaks (commit `e67ddf3f` in that submodule).
+It is kept separately because southlake tracks a different upstream branch.
 
 ## Original README
 
