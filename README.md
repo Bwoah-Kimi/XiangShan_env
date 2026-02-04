@@ -1,43 +1,39 @@
-XiangShan Frontend Develop Environment
-==================
+# xs-env (legacy Nanhu 2024)
 
-[![CI](https://github.com/OpenXiangShan/xs-env/actions/workflows/main.yml/badge.svg)](https://github.com/OpenXiangShan/xs-env/actions/workflows/main.yml)
+This superproject tracks a legacy Nanhu-era XiangShan setup with local 2024
+config presets consolidated into the XiangShan submodule. The original
+superproject README is preserved as `ORIGINAL_README.md`.
 
-# TLDR
+## Submodules and branches
 
-使用以下脚本来布署香山开发环境，**部署脚本只需运行一次.**：
+- `XiangShan` -> fork branch `nanhu-legacy-2024`
+- `XiangShan-southlake` -> fork branch `southlake-legacy-2024`
+- `verilator`, `NEMU`, `DRAMsim3`, `NutShell`, `nexus-am` -> upstream
 
-This script will setup XiangShan develop environment automatically. Note that `./setup-tools.sh` and `setup.sh` only need to be run **ONCE**. 
+Initialize:
 
-```sh
-git clone https://github.com/OpenXiangShan/xs-env
-cd xs-env
-sudo -s ./setup-tools.sh # use apt to install dependencies, you may modify it to use different pkg manager
-source setup.sh # prepare tools, test develop env using a small project
+```
+git submodule update --init --recursive
 ```
 
-由于香山 `master` 分支更新频繁，此仓库中的 submodule 默认追踪香山主线分支上的一个稳定提交，**并不是香山及其他工具的最新版本**。要更新各子仓库到最新版本，可以运行:
+## What was added in XiangShan
 
-Due to the frequent updates of the Xiangshan `master` branch, the submodule in this repo tracks a stable commit on the Xiangshan master branch by default, **not the latest version of Xiangshan and the other tools**. To update each submodule to the latest version, run:
+See `XiangShan/README.md` for full details. In short, the legacy branch adds:
 
-```sh
-source update-submodule.sh
-```
+- `MyMinimalSmallConfig` (small core + small caches)
+- `MyMinimalMidConfig` (mid-size core + larger TLBs, BPD on)
+- `NoL2Config` (L2 disabled; L3 connects to L1 clients)
+- helper scripts under `XiangShan/scripts/`
 
-**环境部署成功后，每次要使用开发环境时，只需使用以下命令配置环境变量**：
+Note: `XiangShan/build.sc` uses a fixed JVM heap (default `-Xmx15G`).
+If RTL generation OOMs, raise `-Xmx` before running `make verilog`.
 
-After XiangShan Develop Environment setup, use the following script **every time** before using XiangShan Develop Environment.
+## What was added in XiangShan-southlake
 
-```sh
-cd xs-env
-source ./env.sh # setup XiangShan environment variables
-```
+The southlake legacy branch contains a `MyMinimalConfig` preset and related
+build/scalafmt tweaks (commit `e67ddf3f` in that submodule). It is kept
+separately because southlake tracks a different upstream branch.
 
+## Original README
 
-# Document
-
-详细使用方式请参考完整文档:
-
-For further instructions, see:
-
-[XiangShan Frontend Develop Environment Document](https://xiangshan-doc.readthedocs.io/zh_CN/latest/tools/xsenv/)
+See `ORIGINAL_README.md` for the original project description and links.
