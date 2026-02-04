@@ -1,6 +1,11 @@
 [submodule "XiangShan"]
 	path = XiangShan
-	url = https://github.com/OpenXiangShan/XiangShan
+	url = https://github.com/Bwoah-Kimi/XiangShan.git
+	branch = nanhu-legacy-2024
+[submodule "XiangShan-southlake"]
+	path = XiangShan-southlake
+	url = https://github.com/Bwoah-Kimi/XiangShan.git
+	branch = southlake-legacy-2024
 [submodule "NEMU"]
 	path = NEMU
 	url = https://github.com/OpenXiangShan/NEMU
@@ -15,3 +20,6 @@
 [submodule "DRAMsim3"]
 	path = DRAMsim3
 	url = https://github.com/OpenXiangShan/DRAMsim3.git
+[submodule "verilator"]
+	path = verilator
+	url = https://github.com/verilator/verilator
